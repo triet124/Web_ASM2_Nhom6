@@ -27,7 +27,7 @@ namespace Web_ASM_Nhom6.Controllers
         //    return View();
         //}
 
-        private string url = "http://localhost:29015/api/Products";
+        private string url = "http://localhost:29015/api/Product";
         [HttpGet]
         public async Task<IActionResult> Index()
         {
@@ -35,7 +35,7 @@ namespace Web_ASM_Nhom6.Controllers
 
             using (var httpClient = new HttpClient())
             {
-                using (var response = await httpClient.GetAsync("http://localhost:29015/api/Products"))
+                using (var response = await httpClient.GetAsync(url))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     products = JsonConvert.DeserializeObject<List<Product>>(apiResponse);
@@ -46,30 +46,30 @@ namespace Web_ASM_Nhom6.Controllers
         }
 
 
-        public ViewResult Information() => View();
-        [HttpPost]
-        public async Task<IActionResult> Information(int id)
-        {
-            Product products = new Product();
+        //public ViewResult Information() => View();
+        //[HttpPost]
+        //public async Task<IActionResult> Information(int id)
+        //{
+        //    Product products = new Product();
 
-            using (var httpClient = new HttpClient())
-            {
-                using (var response = await httpClient.GetAsync("http://localhost:29015/api/Products" + id))
-                {
-                    if (response.IsSuccessStatusCode)
-                    {
-                        string apiResponse = await response.Content.ReadAsStringAsync();
-                        products = JsonConvert.DeserializeObject<Product>(apiResponse);
-                    }
-                    else
-                    {
-                        ViewBag.StatusCode = response.StatusCode;
-                    }
-                }
-            }
+        //    using (var httpClient = new HttpClient())
+        //    {
+        //        using (var response = await httpClient.GetAsync("http://localhost:29015/api/Products" + id))
+        //        {
+        //            if (response.IsSuccessStatusCode)
+        //            {
+        //                string apiResponse = await response.Content.ReadAsStringAsync();
+        //                products = JsonConvert.DeserializeObject<Product>(apiResponse);
+        //            }
+        //            else
+        //            {
+        //                ViewBag.StatusCode = response.StatusCode;
+        //            }
+        //        }
+        //    }
 
-            return View(products);
-        }
+        //    return View(products);
+        //}
 
         //[HttpGet("{id}")]
         //public async Task<IActionResult> Information(int id)

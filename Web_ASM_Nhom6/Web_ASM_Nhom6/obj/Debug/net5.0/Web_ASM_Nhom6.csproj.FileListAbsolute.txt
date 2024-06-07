@@ -172,3 +172,11 @@ D:\C#5\Web_ASM2_Nhom6\Web_ASM_Nhom6\Web_ASM_Nhom6\bin\Debug\net5.0\runtimes\win-
 D:\C#5\Web_ASM2_Nhom6\Web_ASM_Nhom6\Web_ASM_Nhom6\bin\Debug\net5.0\runtimes\win-x86\native\e_sqlite3.dll
 D:\C#5\Web_ASM2_Nhom6\Web_ASM_Nhom6\Web_ASM_Nhom6\obj\Debug\net5.0\Razor\Views\Home\Information.cshtml.g.cs
 D:\C#5\Web_ASM2_Nhom6\Web_ASM_Nhom6\Web_ASM_Nhom6\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\C#5\Web_ASM2_Nhom6\Web_ASM_Nhom6\Web_ASM_Nhom6\obj\Debug\net5.0\Razor\Views\Product\Index.cshtml.g.cs
+D:\C#5\Web_ASM2_Nhom6\Web_ASM_Nhom6\Web_ASM_Nhom6\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\C#5\Web_ASM2_Nhom6\Web_ASM_Nhom6\Web_ASM_Nhom6\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+D:\C#5\Web_ASM2_Nhom6\Web_ASM_Nhom6\Web_ASM_Nhom6\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+D:\C#5\Web_ASM2_Nhom6\Web_ASM_Nhom6\Web_ASM_Nhom6\obj\Debug\net5.0\Razor\Views\Category\Add.cshtml.g.cs
+D:\C#5\Web_ASM2_Nhom6\Web_ASM_Nhom6\Web_ASM_Nhom6\obj\Debug\net5.0\Razor\Views\Category\Delete.cshtml.g.cs
+D:\C#5\Web_ASM2_Nhom6\Web_ASM_Nhom6\Web_ASM_Nhom6\obj\Debug\net5.0\Razor\Views\Category\Edit.cshtml.g.cs
+D:\C#5\Web_ASM2_Nhom6\Web_ASM_Nhom6\Web_ASM_Nhom6\obj\Debug\net5.0\Razor\Views\Category\GetCategory.cshtml.g.cs

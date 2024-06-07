@@ -9,22 +9,22 @@ namespace Web_ASM_Nhom6.Controllers
 {
     public class ProductController : Controller
     {
-        private string url = "http://localhost:29015/api/Products";
+        private string url = "http://localhost:29015/api/Product";
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            List<Product> categories = new List<Product>();
+            List<Product> products = new List<Product>();
 
             using (var httpClient = new HttpClient())
             {
-                using (var response = await httpClient.GetAsync("http://localhost:29015/api/Products"))
+                using (var response = await httpClient.GetAsync(url))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
-                    categories = JsonConvert.DeserializeObject<List<Product>>(apiResponse);
+                    products = JsonConvert.DeserializeObject<List<Product>>(apiResponse);
                 }
             }
 
-            return View(categories);
+            return View(products);
         }
     }
 }
