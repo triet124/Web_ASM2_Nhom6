@@ -171,3 +171,4 @@ D:\C#5\Web_ASM2_Nhom6\Web_ASM_Nhom6\Web_ASM_Nhom6\bin\Debug\net5.0\runtimes\win-
 D:\C#5\Web_ASM2_Nhom6\Web_ASM_Nhom6\Web_ASM_Nhom6\bin\Debug\net5.0\runtimes\win-x64\native\e_sqlite3.dll
 D:\C#5\Web_ASM2_Nhom6\Web_ASM_Nhom6\Web_ASM_Nhom6\bin\Debug\net5.0\runtimes\win-x86\native\e_sqlite3.dll
 D:\C#5\Web_ASM2_Nhom6\Web_ASM_Nhom6\Web_ASM_Nhom6\obj\Debug\net5.0\Razor\Views\Home\Information.cshtml.g.cs
+D:\C#5\Web_ASM2_Nhom6\Web_ASM_Nhom6\Web_ASM_Nhom6\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
