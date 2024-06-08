@@ -22,10 +22,6 @@ namespace Web_ASM_Nhom6.Controllers
             _logger = logger;
         }
 
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
 
         private string url = "http://localhost:29015/api/Product";
         [HttpGet]
@@ -46,51 +42,30 @@ namespace Web_ASM_Nhom6.Controllers
         }
 
 
-        //public ViewResult Information() => View();
-        //[HttpPost]
-        //public async Task<IActionResult> Information(int id)
-        //{
-        //    Product products = new Product();
+        //GetID
+        public ViewResult Information() => View();
+        [HttpGet]
+        public async Task<IActionResult> Information(int id)
+        {
+            Product getidproduct = new Product();
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync(($"{url}/{id}")))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        string apiResponse = await response.Content.ReadAsStringAsync();
+                        getidproduct = JsonConvert.DeserializeObject<Product>(apiResponse);
+                    }
+                }
+            }
+            return View(getidproduct);
+        }
 
-        //    using (var httpClient = new HttpClient())
-        //    {
-        //        using (var response = await httpClient.GetAsync("http://localhost:29015/api/Products" + id))
-        //        {
-        //            if (response.IsSuccessStatusCode)
-        //            {
-        //                string apiResponse = await response.Content.ReadAsStringAsync();
-        //                products = JsonConvert.DeserializeObject<Product>(apiResponse);
-        //            }
-        //            else
-        //            {
-        //                ViewBag.StatusCode = response.StatusCode;
-        //            }
-        //        }
-        //    }
-
-        //    return View(products);
-        //}
-
-        //[HttpGet("{id}")]
-        //public async Task<IActionResult> Information(int id)
-        //{
-        //    List<Product> products = new List<Product>();
-
-        //    using (var httpClient = new HttpClient())
-        //    {
-        //        using (var response = await httpClient.GetAsync("http://localhost:29015/api/Products/" + id))
-        //        {
-        //            if (response.IsSuccessStatusCode)
-        //            {
-        //                string apiResponse = await response.Content.ReadAsStringAsync();
-        //                products = JsonConvert.DeserializeObject<List<Product>>(apiResponse);
-        //            }
-        //        }
-        //    }
-
-        //    return View(products);
-        //}
-
+        public IActionResult Privacy()
+        {
+            return View();
+        }
 
 
 
