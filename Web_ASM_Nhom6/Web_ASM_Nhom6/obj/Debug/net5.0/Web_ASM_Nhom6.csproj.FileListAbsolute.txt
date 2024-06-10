@@ -183,3 +183,6 @@ D:\C#5\Web_ASM2_Nhom6\Web_ASM_Nhom6\Web_ASM_Nhom6\obj\Debug\net5.0\Razor\Views\H
 D:\C#5\Web_ASM2_Nhom6\Web_ASM_Nhom6\Web_ASM_Nhom6\obj\Debug\net5.0\Razor\Views\Product\Add.cshtml.g.cs
 D:\C#5\Web_ASM2_Nhom6\Web_ASM_Nhom6\Web_ASM_Nhom6\obj\Debug\net5.0\Razor\Views\Product\Delete.cshtml.g.cs
 D:\C#5\Web_ASM2_Nhom6\Web_ASM_Nhom6\Web_ASM_Nhom6\obj\Debug\net5.0\Razor\Views\Product\Edit.cshtml.g.cs
+D:\C#5\Web_ASM2_Nhom6\Web_ASM_Nhom6\Web_ASM_Nhom6\obj\Debug\net5.0\Razor\Views\Category\GetID.cshtml.g.cs
+D:\C#5\Web_ASM2_Nhom6\Web_ASM_Nhom6\Web_ASM_Nhom6\obj\Debug\net5.0\Razor\Views\Category\Lay.cshtml.g.cs
+D:\C#5\Web_ASM2_Nhom6\Web_ASM_Nhom6\Web_ASM_Nhom6\obj\Debug\net5.0\Razor\Views\Product\GetIDMenuOfProduct.cshtml.g.cs

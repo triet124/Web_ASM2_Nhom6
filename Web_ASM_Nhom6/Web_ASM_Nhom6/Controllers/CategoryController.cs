@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -29,7 +31,7 @@ namespace Web_ASM_Nhom6.Controllers
             }
             return View(categories);
         }
-
+         
 
         //Add
         [HttpGet]
@@ -172,6 +174,40 @@ namespace Web_ASM_Nhom6.Controllers
             }
             return View(getidcategory);
         }
+
+
+        ////GetALL
+        [HttpGet]
+        public async Task<IActionResult> Lay(int id)
+        {
+            try
+            {
+                List<Restaurant> restaurants = new List<Restaurant>();
+
+                using (var httpClient = new HttpClient())
+                {
+                    string apiUrl = $"{url}?categoryId={id}";
+
+                    using (var response = await httpClient.GetAsync(apiUrl))
+                    {
+                        response.EnsureSuccessStatusCode();
+                        string apiResponse = await response.Content.ReadAsStringAsync();
+                        restaurants = JsonConvert.DeserializeObject<List<Restaurant>>(apiResponse);
+                    }
+                }
+
+                return View(restaurants);
+            }
+            catch (HttpRequestException)
+            {
+                return NotFound();
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while retrieving the restaurants.");
+            }
+        }
+
 
     }
 }

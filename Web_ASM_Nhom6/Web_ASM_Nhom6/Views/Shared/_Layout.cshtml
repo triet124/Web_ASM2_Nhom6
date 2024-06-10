@@ -37,8 +37,8 @@
                     <div class="col-md-12 mx-auto bg-white rounded-pill mt-4">
                         <form class="d-flex">
                             <div class="input-group">
-                                <input class="form-control rounded-pill mt-1 border-0" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-danger rounded-pill mx-1 mb-1 mt-1" type="submit">
+                                <input type="text" id="search" name="search" class="form-control rounded-pill mt-1 border-0" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-danger rounded-pill mx-1 mb-1 mt-1" type="submit" asp-area="" asp-controller="Product" asp-action="Index">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                                     </svg>
@@ -85,7 +85,10 @@
                             <li class="nav-item">
                                 <a class="nav-link text-white mx-4" href="#">Giới Thiệu</a>
                             </li>
-                            <li class="nav-item dropdown">
+                            <li class="nav-item">
+                                <a class="nav-link text-white mx-4" asp-area="" asp-controller="Product" asp-action="Index">Sản Phẩm</a>
+                            </li>
+@*                             <li class="nav-item dropdown">
                                 <a class="nav-link text-white mx-4 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Sản Phẩm
                                 </a>
@@ -95,12 +98,12 @@
                                     <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item" href="#">Something else here</a></li>
                                 </ul>
+                            </li> *@
+                            <li class="nav-item">
+                                <a class="nav-link text-white mx-4" asp-area="" asp-controller="Home" asp-action="Index">Liên Hệ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white mx-4" asp-area="Admin" asp-controller="Admin" asp-action="Index">Liên Hệ</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white mx-4" aria-current="page" href="#">Hỏi Đáp</a>
+                                <a class="nav-link text-white mx-4" asp-area="" asp-controller="Home" asp-action="Index">Hỏi Đáp</a>
                             </li>
                         </ul>
                     </div>
@@ -207,6 +210,24 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script type="text/javascript">
+        (function (d, m) {
+            var kommunicateSettings =
+                { "appId": "18149a2835fe51448d0096bd2d429765", "popupWidget": true, "automaticChatOpenOnNavigation": true };
+            var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+            s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+            var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+            window.kommunicate = m; m._globals = kommunicateSettings;
+        })(document, window.kommunicate || {});
+        /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+    </script>
+
+@*     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger intent="WELCOME"
+                  chat-title="VFOOD"
+                  agent-id="5810ed83-bdb4-4084-8ba7-c8c55dc158ce"
+                  language-code="vi"></df-messenger> *@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

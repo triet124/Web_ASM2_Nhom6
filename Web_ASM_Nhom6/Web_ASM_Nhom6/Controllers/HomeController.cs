@@ -25,7 +25,7 @@ namespace Web_ASM_Nhom6.Controllers
 
         private string url = "http://localhost:29015/api/Product";
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchQuery)
         {
             List<Product> products = new List<Product>();
 
@@ -36,6 +36,11 @@ namespace Web_ASM_Nhom6.Controllers
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     products = JsonConvert.DeserializeObject<List<Product>>(apiResponse);
                 }
+            }
+
+            if (!string.IsNullOrEmpty(searchQuery))
+            {
+                products = products.Where(p => p.Name.Contains(searchQuery)).ToList();
             }
 
             return View(products);
@@ -66,6 +71,8 @@ namespace Web_ASM_Nhom6.Controllers
         {
             return View();
         }
+
+
 
 
 
