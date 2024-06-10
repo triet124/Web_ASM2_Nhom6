@@ -27,7 +27,7 @@
         @foreach (var item in Model.Take(8))
         {
             <button class="btn btn-danger col-md-2 m-auto" style="font-size:15px; max-width:120px">
-                <img src="@Html.DisplayFor(modelitem => item.Image)" alt="Alternate Text" width="100px" />
+                @Html.DisplayFor(modelitem => item.Name)
             </button>
         }
     </div>

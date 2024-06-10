@@ -24,6 +24,8 @@ namespace Web_ASM_Nhom6.Controllers
 
 
         private string url = "http://localhost:29015/api/Product";
+
+        private string urlCategory = "http://localhost:29015/api/Category";
         [HttpGet]
         public async Task<IActionResult> Index(string searchQuery)
         {
@@ -37,6 +39,18 @@ namespace Web_ASM_Nhom6.Controllers
                     products = JsonConvert.DeserializeObject<List<Product>>(apiResponse);
                 }
             }
+
+            List<Category> categories = new List<Category>();
+
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync(urlCategory))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    categories = JsonConvert.DeserializeObject<List<Category>>(apiResponse);
+                }
+            }
+
 
             if (!string.IsNullOrEmpty(searchQuery))
             {
